@@ -1,8 +1,7 @@
 package router
 
 import (
-	"net/http"
-
+	"github.com/LuisMarchio03/golang-boilerplate-api/handler"
 	"github.com/gin-gonic/gin"
 )
 
@@ -10,44 +9,19 @@ func initializeRoutes(r *gin.Engine) {
 	v1 := r.Group("/api/v1")
 	{
 		v1.GET("/opening", func(ctx *gin.Context) {
-			ctx.JSON(http.StatusOK, gin.H{
-				"msg": "GET Opening",
-			})
+			handler.ShowOpeningHandler(ctx)
 		})
 		v1.POST("/opening", func(ctx *gin.Context) {
-			ctx.JSON(http.StatusOK, gin.H{
-				"msg": "POST Opening",
-			})
+			handler.CreateOpeningHandler(ctx)
 		})
 		v1.DELETE("/opening", func(ctx *gin.Context) {
-			ctx.JSON(http.StatusOK, gin.H{
-				"msg": "DELETE Opening",
-			})
+			handler.DeleteOpeningHandler(ctx)
 		})
 		v1.PUT("/opening", func(ctx *gin.Context) {
-			ctx.JSON(http.StatusOK, gin.H{
-				"msg": "PUT Opening",
-			})
+			handler.UpdateOpeningHandler(ctx)
 		})
 		v1.GET("/openings", func(ctx *gin.Context) {
-			ctx.JSON(http.StatusOK, gin.H{
-				"msg": "GET Openings",
-			})
+			handler.ShowOpeningsHandler(ctx)
 		})
 	}
 }
-
-// GET
-//? curl -X GET http://localhost:8080/api/v1/opening
-
-// POST
-//? curl -X POST http://localhost:8080/api/v1/opening
-
-// DELETE
-//? curl -X DELETE http://localhost:8080/api/v1/opening
-
-// PUT
-//? curl -X PUT http://localhost:8080/api/v1/opening
-
-// GET
-//? curl -X GET http://localhost:8080/api/v1/openings
