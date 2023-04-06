@@ -34,6 +34,6 @@ func initializeRoutes(r *gin.Engine) {
 	}
 	// Intialize Swagger
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(
-		swaggerfiles.Handler
+		swaggerfiles.Handler,
 	))
 }
