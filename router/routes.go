@@ -1,13 +1,18 @@
 package router
 
 import (
+	docs "github.com/LuisMarchio03/golang-boilerplate-api/docs"
 	"github.com/LuisMarchio03/golang-boilerplate-api/handler"
 	"github.com/gin-gonic/gin"
+	swaggerfiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 func initializeRoutes(r *gin.Engine) {
 	// initialize handler
 	handler.InitializeHandler()
+	basePath := "/api/v1"
+	docs.SwaggerInfo.BasePath = basePath
 
 	v1 := r.Group("/api/v1")
 	{
@@ -24,7 +29,11 @@ func initializeRoutes(r *gin.Engine) {
 			handler.UpdateOpeningHandler(ctx)
 		})
 		v1.GET("/openings", func(ctx *gin.Context) {
-			handler.ShowOpeningsHandler(ctx)
+			handler.ListOpeningsHandler(ctx)
 		})
 	}
+	// Intialize Swagger
+	r.GET("/swagger/*any", ginSwagger.WrapHandler(
+		swaggerfiles.Handler,
+	))
 }
