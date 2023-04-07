@@ -35,6 +35,15 @@ definitions:
       message:
         type: string
     type: object
+  handler.ListOpeningsResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/schemas.OpeningResponse'
+        type: array
+      message:
+        type: string
+    type: object
   handler.ShowOpeningResponse:
     properties:
       data:
@@ -146,6 +155,27 @@ paths:
           schema:
             $ref: '#/definitions/handler.ErrorResponse'
       summary: Create Opening
+      tags:
+      - Opening
+  /openings:
+    get:
+      consumes:
+      - application/json
+      description: List all job openings
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ListOpeningsResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handler.ErrorResponse'
+      summary: List Openings
       tags:
       - Opening
 swagger: "2.0"
