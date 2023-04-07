@@ -8,8 +8,8 @@ This is a job opportunities API built using the Golang programming language. The
 
 To run this project, you will need to have installed on your machine:
 
-Golang
-SQLite3
+- Golang
+- SQLite3
 
 
 ## Features
