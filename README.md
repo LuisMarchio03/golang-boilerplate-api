@@ -29,7 +29,7 @@ SQLite3
 
 To use this project, you need to follow these steps:
 
-1. Clone the repository: `git clone https://github.com/username/repo-name.git`
+1. Clone the repository: `git clone https://github.com/LuisMarchio03/golang-boilerplate-api`
 2. Install the dependencies: `go mod download`
 3. Build the application: `go build`
 4. Run the application: `./main`
