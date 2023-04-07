@@ -40,10 +40,10 @@ The project includes a Makefile to help you manage common tasks more easily. Her
 
 - `make run`: Run the application without generating API documentation.
 - `make run-with-docs`: Generate the API documentation using Swag, then run the application.
-- `make build`: Build the application and create an executable file named `gopportunities`.
+- `make build`: Build the application and create an executable file named `golang-boilerplate-api`.
 - `make test`: Run tests for all packages in the project.
 - `make docs`: Generate the API documentation using Swag.
-- `make clean`: Remove the `gopportunities` executable and delete the `./docs` directory.
+- `make clean`: Remove the `golang-boilerplate-api` executable and delete the `./docs` directory.
 
 To use these commands, simply type `make` followed by the desired command in your terminal. For example:
 
