@@ -10,6 +10,7 @@ To run this project, you will need to have installed on your machine:
 
 - Golang
 - SQLite3
+- Swarggo
 
 
 ## Features
