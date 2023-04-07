@@ -17,6 +17,45 @@ const docTemplate = `{
     "basePath": "{{.BasePath}}",
     "paths": {
         "/opening": {
+            "get": {
+                "description": "Show a job opening",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Opening"
+                ],
+                "summary": "Show Opening",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Opening identification",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/handler.ShowOpeningResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handler.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handler.ErrorResponse"
+                        }
+                    }
+                }
+            },
             "post": {
                 "description": "Create a new job opening",
                 "consumes": [
@@ -59,7 +98,7 @@ const docTemplate = `{
                 }
             },
             "delete": {
-                "description": "Delete job opening",
+                "description": "Delete a job opening",
                 "consumes": [
                     "application/json"
                 ],
@@ -89,8 +128,8 @@ const docTemplate = `{
                             "$ref": "#/definitions/handler.ErrorResponse"
                         }
                     },
-                    "500": {
-                        "description": "Internal Server Error",
+                    "404": {
+                        "description": "Not Found",
                         "schema": {
                             "$ref": "#/definitions/handler.ErrorResponse"
                         }
@@ -150,6 +189,17 @@ const docTemplate = `{
             "properties": {
                 "errorCode": {
                     "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "handler.ShowOpeningResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/schemas.OpeningResponse"
                 },
                 "message": {
                     "type": "string"
