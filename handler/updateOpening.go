@@ -8,6 +8,20 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// @BaseParh /api/v1
+
+// @Summary Update Opening
+// @Description Update a new job opening
+// @Tags Opening
+// @Accept json
+// @Producer json
+// @Param id query string true "Opening identification"
+// @Param request body UpdateOpeningRequest true "Opening data to update"
+// @Success 200 {object} UpdateOpeningResponse
+// @Failure 400 {object} ErrorResponse
+// @Failure 404 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Router /opening [put]
 func UpdateOpeningHandler(ctx *gin.Context) {
 	request := UpdateOpeningRequest{}
 
@@ -37,22 +51,22 @@ func UpdateOpeningHandler(ctx *gin.Context) {
 	}
 
 	// update opening
-	if request.Role == "" {
+	if request.Role != "" {
 		opening.Role = request.Role
 	}
-	if request.Company == "" {
+	if request.Company != "" {
 		opening.Company = request.Company
 	}
-	if request.Location == "" {
+	if request.Location != "" {
 		opening.Location = request.Location
 	}
-	if request.Link == "" {
-		opening.Link = request.Link
-	}
-	if request.Remote == nil {
+	if request.Remote != nil {
 		opening.Remote = *request.Remote
 	}
-	if request.Salary <= 0 {
+	if request.Link != "" {
+		opening.Link = request.Link
+	}
+	if request.Salary > 0 {
 		opening.Salary = request.Salary
 	}
 
