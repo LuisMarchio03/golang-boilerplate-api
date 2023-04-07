@@ -8,8 +8,9 @@ This is a job opportunities API built using the Golang programming language. The
 
 To run this project, you will need to have installed on your machine:
 
-Golang
-SQLite3
+- Golang
+- SQLite3
+- Swarggo
 
 
 ## Features
@@ -29,7 +30,7 @@ SQLite3
 
 To use this project, you need to follow these steps:
 
-1. Clone the repository: `git clone https://github.com/username/repo-name.git`
+1. Clone the repository: `git clone https://github.com/LuisMarchio03/golang-boilerplate-api`
 2. Install the dependencies: `go mod download`
 3. Build the application: `go build`
 4. Run the application: `./main`
@@ -40,10 +41,10 @@ The project includes a Makefile to help you manage common tasks more easily. Her
 
 - `make run`: Run the application without generating API documentation.
 - `make run-with-docs`: Generate the API documentation using Swag, then run the application.
-- `make build`: Build the application and create an executable file named `gopportunities`.
+- `make build`: Build the application and create an executable file named `golang-boilerplate-api`.
 - `make test`: Run tests for all packages in the project.
 - `make docs`: Generate the API documentation using Swag.
-- `make clean`: Remove the `gopportunities` executable and delete the `./docs` directory.
+- `make clean`: Remove the `golang-boilerplate-api` executable and delete the `./docs` directory.
 
 To use these commands, simply type `make` followed by the desired command in your terminal. For example:
 
