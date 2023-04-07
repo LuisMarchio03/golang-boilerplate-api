@@ -16,3 +16,4 @@
 # Db folder
 
 db/
+.vercel
