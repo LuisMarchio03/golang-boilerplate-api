@@ -1,5 +1,6 @@
-
 # Golang Boilerplate API
+
+![Logo](./.github/GopportunitiesHeader.svg) 
 
 This is a job opportunities API built using the Golang programming language. The API uses the Gin framework as a router, SQLite as a database, and GoORM for database communication. It also includes Swagger for documentation and testing, and a well-organized package structure.
 
